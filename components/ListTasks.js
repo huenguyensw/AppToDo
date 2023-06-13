@@ -7,7 +7,8 @@ export default function ListTasks({ tasks, onChangeListTasks }) {
     const renderItem = (({ item }) =>
         <TaskInfor
             index={item.id}
-            currentTask={item} tasks={tasks}
+            currentTask={item} 
+            tasks={tasks}
             onChangeListTasks={onChangeListTasks}
         />);
     useEffect(() => {

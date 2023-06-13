@@ -3,6 +3,7 @@ import { StyleSheet, Text, Pressable, TextInput, View, Keyboard } from 'react-na
 
 export default function AddTask({ tasks, onChangeListTasks, id, setId }) {
     const [task, onChangeTask] = useState('');
+
     const AddOneTask = () => {
         onChangeListTasks([...tasks, { id: id, name: task }]);
         setId(id + 1);
@@ -15,7 +16,10 @@ export default function AddTask({ tasks, onChangeListTasks, id, setId }) {
                 style={styles.input}
                 value={task}
                 onChangeText={(value) => onChangeTask(value)} placeholder='New Task' />
-            <Pressable style={styles.button} onPress={AddOneTask}>
+            <Pressable
+                style={styles.button}
+                onPress={AddOneTask}
+            >
                 <Text style={styles.text}>Add</Text>
             </Pressable>
         </View>
